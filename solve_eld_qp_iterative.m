@@ -5,6 +5,8 @@ function [P_opt, cost, iter] = solve_eld_qp_iterative(cost_coeff, P_limits, P_lo
     P_prev = mean(P_limits, 2);
     iter = 0;
     converged = false;
+    tol = 1e-4;                % Tolerance for power balance
+    max_iter = 250;            % Maximum iterations
     
     while ~converged && iter < max_iter
         iter = iter + 1;
