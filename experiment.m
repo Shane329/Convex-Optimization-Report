@@ -75,7 +75,7 @@ for i = 1:length(noise_levels)
         noisy_cost_coeff = cost_coeff .* noise;
         
         % Solve using QP
-        [P_opt_qp, cost_qp] = solve_eld_qp(noisy_cost_coeff, P_limits, P_load, B, B0, B00);
+        [P_opt_qp, cost_qp] = solve_eld_qp_iterative(noisy_cost_coeff, P_limits, P_load, B, B0, B00);
         costs_qp(trial) = cost_qp;
         
         % Solve using Lambda Iteration
