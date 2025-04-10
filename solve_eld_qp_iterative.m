@@ -1,6 +1,6 @@
 % QP Solver Function
 
-function [P_opt, cost, iter] = solve_eld_qp_iterative(cost_coeff, P_limits, P_load, B, B0, B00, tol, max_iter)
+function [P_opt, cost, iter] = solve_eld_qp_iterative(cost_coeff, P_limits, P_load, B, B0, B00)
     % Initialize
     P_prev = mean(P_limits, 2);
     iter = 0;
